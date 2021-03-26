@@ -19,10 +19,10 @@ This repository allows you to easily setup an NVIDIA Docker & CUDA mirror that r
 
 Run the `mirror` container :
 
-    ```bash
-    docker-compose build
-    docker-compose up mirror
-    ```
+```bash
+docker-compose build
+docker-compose up mirror
+```
 
 Expected size : 1.5 Go
 
