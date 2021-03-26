@@ -41,7 +41,7 @@ Server will run on [`localhost:8080`](http://localhost:8080)
 
 ### Ubuntu 18.04
 
-Here is an example of configuration for `Ubuntu` (create the following file : `/etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list`) :
+Create the `/etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list` file :
 
 ```bash
 deb http://localhost:8080/libnvidia-container/stable/ubuntu18.04/amd64 /
@@ -49,7 +49,13 @@ deb http://localhost:8080/nvidia-container-runtime/stable/ubuntu18.04/amd64 /
 deb http://localhost:8080/nvidia-docker/stable/ubuntu18.04/amd64 /
 ```
 
-If you use another distro, you'll have to configure your package configuration accordingly.
+You can now :
+
+```bash
+apt-get update
+```
+
+_If you use another distro, you'll have to configure your package configuration accordingly._
 
 :point_right: Please cite my work if you're using it !  
 :point_right: Feel free to send **pull requests** !
