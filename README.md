@@ -25,8 +25,6 @@ docker-compose up mirror
 
 Expected size : **1.5 Go**
 
-> Tips: We recommend you downloading the mirror from [a cloud provider](https://www.scaleway.com/en/) and then transfer the files to your computer.
-
 ## Serving
 
 Run the server :
