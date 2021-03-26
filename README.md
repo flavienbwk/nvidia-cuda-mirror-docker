@@ -6,11 +6,10 @@
     </a>
 </p>
 
-This repository allows you to easily setup an NVIDIA Docker & CUDA mirror that retrieves the following libraries :
+Want to have fun with NVIDIA Docker ? This repository allows you to easily setup an NVIDIA Docker mirror that retrieves the following libraries :
 
 - [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
 - [libnvidia-container](https://github.com/NVIDIA/libnvidia-container)
-- [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit)
 - [nvidia-container-runtime](https://github.com/NVIDIA/nvidia-container-runtime)
 
 **You still have to [download the appropriate NVIDIA drivers for your card](https://www.nvidia.com/Download/index.aspx) first !**
@@ -32,7 +31,7 @@ Expected size : 1.5 Go
 
 1. Check your mirroring succeeded in `./mirror/*` or typing `du -sh ./mirror` to check the volume
 
-    The default configuration should make you download _XX G_
+    The default configuration should make you download _1.5 G_
 
 2. Run the server :
 
@@ -47,8 +46,9 @@ Expected size : 1.5 Go
 Here is an example of configuration for `Ubuntu` (create the following file : `/etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list`) :
 
 ```bash
-# libnvidia-container
-deb https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/amd64 /
+deb http://localhost:8080/libnvidia-container/stable/ubuntu18.04/amd64 /
+deb http://localhost:8080/nvidia-container-runtime/stable/ubuntu18.04/amd64 /
+deb http://localhost:8080/nvidia-docker/stable/ubuntu18.04/amd64 /
 ```
 
 If you use another distro, you'll have to configure your package configuration accordingly.

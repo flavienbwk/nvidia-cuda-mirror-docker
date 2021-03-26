@@ -6,7 +6,7 @@ src=https://github.com/NVIDIA
 dest=/downloads
 
 cd /downloads
-for lib in "nvidia-docker" "libnvidia-container" "nvidia-container-toolkit" "nvidia-container-runtime"
+for lib in "nvidia-docker" "libnvidia-container" "nvidia-container-runtime"
 do
 	if [ ! -d "${dest}/${lib}" ]
 	then
@@ -14,6 +14,8 @@ do
 	fi
 	cd "${lib}"
 	git pull
-	git checkout gh-pages || true # some repos don't have gh-pages
+	git checkout gh-pages
 	cd -
 done
+
+wget -O gpgkey https://nvidia.github.io/nvidia-docker/gpgkey
