@@ -36,9 +36,9 @@ Expected size : 1.5 Go
 
 2. Run the server :
 
-        ```bash
-        docker-compose up -d server
-        ```
+    ```bash
+    docker-compose up -d server
+    ```
 
     Server will run on [`localhost:8080`](http://localhost:8080)  
 
@@ -46,10 +46,10 @@ Expected size : 1.5 Go
 
 Here is an example of configuration for `Ubuntu` (create the following file : `/etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list`) :
 
-    ```bash
-    # libnvidia-container
-    deb https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/amd64 /
-    ```
+```bash
+# libnvidia-container
+deb https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/amd64 /
+```
 
 If you use another distro, you'll have to configure your package configuration accordingly.
 
