@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://travis-ci.com/github/flavienbwk/nvidia-cuda-mirror-docker" target="_blank">
-        <img src="https://travis-ci.com/flavienbwk/nvidia-cuda-mirror-docker.svg?branch=main&status=passed"/>
+        <img src="https://travis-ci.com/flavienbwk/nvidia-cuda-mirror-docker.svg?branch=main"/>
     </a>
 </p>
 
