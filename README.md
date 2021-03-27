@@ -42,18 +42,50 @@ Server will run on [`localhost:8080`](http://localhost:8080)
 Create the `/etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list` file :
 
 ```bash
-deb http://localhost:8080/libnvidia-container/stable/ubuntu18.04/amd64 /
-deb http://localhost:8080/nvidia-container-runtime/stable/ubuntu18.04/amd64 /
-deb http://localhost:8080/nvidia-docker/stable/ubuntu18.04/amd64 /
+sudo bash -c "{
+    echo 'deb http://localhost:8080/libnvidia-container/stable/ubuntu18.04/amd64 /'
+    echo 'deb http://localhost:8080/nvidia-container-runtime/stable/ubuntu18.04/amd64 /'
+    echo 'deb http://localhost:8080/nvidia-docker/stable/ubuntu18.04/amd64 /'
+} >> /etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list"
+```
+
+> You may just want to copy past the content to some other file :
+> ```txt
+> deb http://localhost:8080/libnvidia-container/stable/ubuntu18.04/amd64 /
+> deb http://localhost:8080/nvidia-container-runtime/stable/ubuntu18.04/amd64 /
+> deb http://localhost:8080/nvidia-docker/stable/ubuntu18.04/amd64 /
+> ```
+
+You'll have to import the `gpgkey` available at the root of the mirror :
+
+```bash
+curl -s -L http://localhost:8080/gpgkey | sudo apt-key add -
 ```
 
 You can now :
 
 ```bash
-apt-get update
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+```
+
+And finally, set-up your `daemon.json` conf file :
+
+```json
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+    "default-runtime": "nvidia"
+}
 ```
 
 _If you use another distro, you'll have to configure your package configuration accordingly._
+
+## Notes
 
 :point_right: Please cite my work if you're using it !  
 :point_right: Feel free to send **pull requests** !
