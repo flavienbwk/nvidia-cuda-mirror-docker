@@ -37,6 +37,8 @@ Server will run on [`localhost:8080`](http://localhost:8080)
 
 ## Client configuration
 
+_If you use another distro than the one below, you'll have to configure your package configuration accordingly._
+
 ### Ubuntu 18.04
 
 Create the `/etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list` file :
@@ -85,7 +87,11 @@ After installing nvidia-docker2, configure your `daemon.json` conf file to use t
 }
 ```
 
-_If you use another distro, you'll have to configure your package configuration accordingly._
+You'll probably need a **reboot**. You can try your install by running :
+
+```bash
+docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+```
 
 ## Notes
 
