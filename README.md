@@ -73,7 +73,7 @@ sudo apt-get install -y nvidia-docker2
 
 ## Docker configuration annexe
 
-After installing nvidia-docker2, configure your `daemon.json` conf file to use the NVIDIA container runtime :
+After installing nvidia-docker2, configure your `/etc/docker/daemon.json` conf file to use the NVIDIA container runtime :
 
 ```json
 {
