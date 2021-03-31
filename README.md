@@ -47,17 +47,17 @@ Create the `/etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list` file :
 
 ```bash
 sudo bash -c "{
-    echo 'deb http://localhost:8080/libnvidia-container/stable/ubuntu18.04/amd64 /'
-    echo 'deb http://localhost:8080/nvidia-container-runtime/stable/ubuntu18.04/amd64 /'
-    echo 'deb http://localhost:8080/nvidia-docker/stable/ubuntu18.04/amd64 /'
+    echo 'deb http://localhost:8080/libnvidia-container/ubuntu18.04/amd64 /'
+    echo 'deb http://localhost:8080/nvidia-container-runtime/ubuntu18.04/amd64 /'
+    echo 'deb http://localhost:8080/nvidia-docker/ubuntu18.04/amd64 /'
 } >> /etc/apt/sources.list.d/nvidia-cuda-docker-mirror.list"
 ```
 
 > You may just want to copy past the content to some other file :
 > ```txt
-> deb http://localhost:8080/libnvidia-container/stable/ubuntu18.04/amd64 /
-> deb http://localhost:8080/nvidia-container-runtime/stable/ubuntu18.04/amd64 /
-> deb http://localhost:8080/nvidia-docker/stable/ubuntu18.04/amd64 /
+> deb http://localhost:8080/libnvidia-container/ubuntu18.04/amd64 /
+> deb http://localhost:8080/nvidia-container-runtime/ubuntu18.04/amd64 /
+> deb http://localhost:8080/nvidia-docker/ubuntu18.04/amd64 /
 > ```
 
 You'll have to import the `gpgkey` available at the root of the mirror :
@@ -152,7 +152,7 @@ sudo yum install nvidia-docker2
 
 ## Docker configuration annexe
 
-After installing nvidia-docker2, configure your `daemon.json` conf file to use the NVIDIA container runtime :
+After installing nvidia-docker2, configure your `/etc/docker/daemon.json` conf file to use the NVIDIA container runtime :
 
 ```json
 {
