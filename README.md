@@ -75,8 +75,10 @@ sudo apt-get install -y nvidia-docker2
 
 ### CentOS 7
 
+You may want to follow [cyberciti.biz's tutorial](https://www.cyberciti.biz/faq/how-to-install-nvidia-driver-on-centos-7-linux) to install `nvidia-smi` or see the TL;DR below
+
 <details>
-<summary>You may want to follow [cyberciti.biz's tutorial](https://www.cyberciti.biz/faq/how-to-install-nvidia-driver-on-centos-7-linux) to install `nvidia-smi` or as a TL;DR :</summary>
+<summary>NVIDIA kernel configuration and install instructions</summary>
 
 ```bash
 # After configuring your ElRepo and EPEL repositories
