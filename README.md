@@ -116,17 +116,6 @@ sudo reboot
 
 </details>
 
-Retrieve and add the GPG key :
-
-```bash
-wget -O RPM-GPG-KEY-NVIDIA-LIBNVIDIA-CONTAINER http://localhost:8080/libnvidia-container/gpgkey
-wget -O RPM-GPG-KEY-NVIDIA-CONTAINER-RUNTIME http://localhost:8080/nvidia-container-runtime/gpgkey
-wget -O RPM-GPG-KEY-NVIDIA-DOCKER http://localhost:8080/nvidia-docker/gpgkey
-sudo rpm --import RPM-GPG-KEY-NVIDIA-LIBNVIDIA-CONTAINER
-sudo rpm --import RPM-GPG-KEY-NVIDIA-CONTAINER-RUNTIME
-sudo rpm --import RPM-GPG-KEY-NVIDIA-DOCKER
-```
-
 Create a `/etc/yum.repos.d/nvidia-cuda-docker-mirror.repo` file :
 
 ```conf
