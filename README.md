@@ -119,8 +119,12 @@ sudo reboot
 Retrieve and add the GPG key :
 
 ```bash
-wget -O RPM-GPG-KEY-NVIDIA http://localhost:8080/gpgkey
-sudo rpm --import RPM-GPG-KEY-NVIDIA
+wget -O RPM-GPG-KEY-NVIDIA-LIBNVIDIA-CONTAINER http://localhost:8080/libnvidia-container/gpgkey
+wget -O RPM-GPG-KEY-NVIDIA-CONTAINER-RUNTIME http://localhost:8080/nvidia-container-runtime/gpgkey
+wget -O RPM-GPG-KEY-NVIDIA-DOCKER http://localhost:8080/nvidia-docker/gpgkey
+sudo rpm --import RPM-GPG-KEY-NVIDIA-LIBNVIDIA-CONTAINER
+sudo rpm --import RPM-GPG-KEY-NVIDIA-CONTAINER-RUNTIME
+sudo rpm --import RPM-GPG-KEY-NVIDIA-DOCKER
 ```
 
 Create a `/etc/yum.repos.d/nvidia-cuda-docker-mirror.repo` file :
@@ -129,19 +133,25 @@ Create a `/etc/yum.repos.d/nvidia-cuda-docker-mirror.repo` file :
 [mymirror-nvidia-libnvidia-container]
 name=My Centos libnvidia-container Nvidia local mirror
 baseurl=http://localhost:8080/libnvidia-container/centos7/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NVIDIA
+gpgkey=http://localhost:8080/gpgkey
+repo_gpgcheck=1
+gpgcheck=0
 enabled=1
 
 [mymirror-nvidia-container-runtime]
 name=My Centos Nvidia container runtime local mirror
 baseurl=http://localhost:8080/nvidia-container-runtime/centos7/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NVIDIA
+gpgkey=http://localhost:8080/gpgkey
+repo_gpgcheck=1
+gpgcheck=0
 enabled=1
 
 [mymirror-nvidia-docker]
 name=My Centos Nvidia Docker local mirror
 baseurl=http://localhost:8080/nvidia-docker/centos7/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NVIDIA
+gpgkey=http://localhost:8080/gpgkey
+repo_gpgcheck=1
+gpgcheck=0
 enabled=1
 ```
 
