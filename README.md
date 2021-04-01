@@ -99,8 +99,8 @@ And then run :
 ```bash
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 sudo bash -c "echo 'blacklist nouveau' > /etc/modprobe.d/blacklist-nouveau.conf" 
-mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
-dracut /boot/initramfs-$(uname -r).img $(uname -r)
+sudo mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
+sudo dracut /boot/initramfs-$(uname -r).img $(uname -r)
 sudo reboot
 ```
 
@@ -110,7 +110,7 @@ Download [the appropriate NVIDIA drivers for your card](https://www.nvidia.com/D
 
 ```bash
 sudo systemctl isolate multi-user.target
-sh NVIDIA-Linux-x86_64-*.run
+sudo sh NVIDIA-Linux-x86_64-*.run
 sudo reboot
 ```
 
